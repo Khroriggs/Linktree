@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --text-color: white;
+  --bg-url: black;
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.2);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(assets/moon-stars.svg);
+}
+.light {
+  --text-color: black;
+  --bg-url: white;
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.02);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(assets/sun.svg);
+}
+body {
+  background: var(--bg-url);
+}
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  width: 360px;
+  height: 712px;
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
+
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: rgb(233, 231, 231) var(--switch-bg-url) no-repeat center;
+  border: rgba(0, 0, 0, 0.5) 1px solid;
+  border-radius: 50%;
+
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+button a:hover {
+  background: var(--highlight-color);
+  padding: 16px;
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  border-radius: 9999px;
+  border: 1px solid var(--stroke-color);
+  background: var(--surface-color);
+  backdrop-filter: blur(4px);
+}
+
+/*PROFILE*/
+#profile {
+  text-align: center;
+}
+
+#profile img {
+  width: 112px;
+}
+#profile p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 8px;
+  margin-bottom: 28px;
+}
+/*LINKS*/
+/*lista não ordenada*/
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+/*elemento da lista (LI) dentro da lista ul A=equeci pesquisar depois*/
+ul li a {
+  display: flex;
+  padding: 16px 24px;
+  justify-content: center;
+
+  border-radius: 8px;
+  border: 1px solid var(--stroke-color);
+  background: var(--surface-color);
+  backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.5s;
+}
+ul li a:hover {
+  border-radius: 8px;
+  border: 1.8px solid var(--text-color);
+  background: var(--surface-color-hover);
+  backdrop-filter: blur(4px);
+}
+/*SOCIAL-LINKS*/
+#social-links {
+  display: flex;
+  padding: 26px 0;
+  justify-content: center;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background 0.5s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background: var(--highlight-color);
+  padding: 16px;
+}
+footer {
+  padding: 24px;
+  text-align: center;
+}
